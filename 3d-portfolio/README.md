@@ -24,7 +24,11 @@ In this course, you'll learn the following:
 mkdir 3d-portfolio
 cd 3d-portfolio
 npm create vite@latest ./ -- --template react-ts
+```
 
+### basic packages for this project
+
+```sh
 npm install -D tailwindcss
 npx tailwindcss init
 
@@ -39,4 +43,20 @@ npm install \
   react-router-dom
 
 npm install -D @types/react-vertical-timeline-component
+```
+
+### Eslint
+
+```sh
+# without eslint-config-prettier, eslint fails
+npm install -D \
+  eslint \
+  eslint-config-prettier \
+  eslint-plugin-prettier \
+  @typescript-eslint/eslint-plugin \
+  @typescript-eslint/parser
+
+# for a test
+# npm install -D eslint-plugin-react # this one is too much
+npm install -D eslint-plugin-react-hooks
 ```
