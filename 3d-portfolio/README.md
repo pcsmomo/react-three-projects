@@ -66,3 +66,9 @@ npm install -D eslint-plugin-react-hooks
 ```sh
 npm install react-router-dom
 ```
+
+## following the lecture
+
+### 3. Navbar
+
+[logo.com - Generate your logo](https://logo.com/)
