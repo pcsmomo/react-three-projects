@@ -60,3 +60,9 @@ npm install -D \
 # npm install -D eslint-plugin-react # this one is too much
 npm install -D eslint-plugin-react-hooks
 ```
+
+### react-router-dom
+
+```sh
+npm install react-router-dom
+```
