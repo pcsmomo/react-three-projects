@@ -61,10 +61,11 @@ npm install -D \
 npm install -D eslint-plugin-react-hooks
 ```
 
-### react-router-dom
+### other libraries
 
 ```sh
 npm install react-router-dom
+npm install framer-motion #
 ```
 
 ## following the lecture
@@ -72,3 +73,5 @@ npm install react-router-dom
 ### 3. Navbar
 
 [logo.com - Generate your logo](https://logo.com/)
+
+### 5. Hero
