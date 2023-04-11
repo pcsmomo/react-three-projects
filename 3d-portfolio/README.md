@@ -66,6 +66,7 @@ npm install -D eslint-plugin-react-hooks
 ```sh
 npm install react-router-dom
 npm install framer-motion #
+npm install three
 ```
 
 ## following the lecture
@@ -74,4 +75,17 @@ npm install framer-motion #
 
 [logo.com - Generate your logo](https://logo.com/)
 
-### 5. Hero
+### 5. Hero - Introduction
+
+```sh
+npm install framer-motion
+```
+
+### 6. Hero - Computer (first 3d component)
+
+- [React Three Fiber Documents](https://docs.pmnd.rs/react-three-fiber)
+- [Sketchfab - 3d models download](https://sketchfab.com/)
+
+```sh
+npm install three
+```
