@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import { SectionWrapper } from "../hoc";
 
 interface ServiceCardProps {
   title: string;
@@ -39,7 +40,7 @@ const ServiceCard: FC<ServiceCardProps> = ({ title, index, icon }) => {
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant(100)}>
+      <motion.div variants={textVariant(0.1)}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
@@ -67,4 +68,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default SectionWrapper(About, "about");

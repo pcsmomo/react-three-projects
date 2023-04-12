@@ -2,6 +2,8 @@
 
 ![3D Portfolio](https://i.ibb.co/9ykhLtM/Thumbnail.png)
 
+https://www.youtube.com/watch?v=0fYi8SGA20k
+
 ## Introduction
 
 The most impressive websites in the world use 3D graphics and animations to bring their content to life. Learn how to build your own ThreeJS 3D Developer Portfolio today!
@@ -65,7 +67,7 @@ npm install -D eslint-plugin-react-hooks
 
 ```sh
 npm install react-router-dom
-npm install framer-motion #
+npm install framer-motion # animation and transition
 npm install three
 ```
 
@@ -94,6 +96,11 @@ npm install three
 
 [window.matchMedia() - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)
 
-### 9. About-init
+### 9. About - introduction
 
 [react-tilt](https://github.com/jonathandion/react-tilt)
+
+### 11. Section Wrapper
+
+- React Extension (ES7+ React/Redux/React-Native snippets):
+  - type `rafce`: Creates a React Arrow Function Component with ES7 module system
