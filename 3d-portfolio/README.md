@@ -89,3 +89,11 @@ npm install framer-motion
 ```sh
 npm install three
 ```
+
+### 8. Hero-scroll and responsive model
+
+[window.matchMedia() - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)
+
+### 9. About-init
+
+[react-tilt](https://github.com/jonathandion/react-tilt)
