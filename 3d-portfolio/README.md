@@ -69,6 +69,7 @@ npm install -D eslint-plugin-react-hooks
 npm install react-router-dom
 npm install framer-motion # animation and transition
 npm install three
+npm install @emailjs/browser
 ```
 
 ## following the lecture
@@ -104,3 +105,9 @@ npm install three
 
 - React Extension (ES7+ React/Redux/React-Native snippets):
   - type `rafce`: Creates a React Arrow Function Component with ES7 module system
+
+### 16. Contact - form
+
+```sh
+npm install @emailjs/browser
+```
