@@ -111,3 +111,14 @@ npm install three
 ```sh
 npm install @emailjs/browser
 ```
+
+### 19. emailjs
+
+- dashboard.emailjs.com
+  - Email Services -> Add New Service
+    - Gmail -> connect account
+  - Email Templates - Create new template
+    - just use the default template
+- Email Services - copy my `Service ID`
+- Email Templates - Settings -> copy my `Template ID`
+- Click my name -> copy my `Public Key`
