@@ -1,3 +1,10 @@
 {
-  "css.lint.unknownAtRules": "ignore"
+  // https://stackoverflow.com/questions/47607602/how-to-add-a-tailwind-css-rule-to-css-checker
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.scss": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  }
 }
