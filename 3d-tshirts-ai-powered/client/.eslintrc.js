@@ -9,6 +9,7 @@ export default {
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
+    "plugin:valtio/recommended",
   ],
   overrides: [],
   parser: "@typescript-eslint/parser",

@@ -66,6 +66,7 @@ npm install -D \
 # for a test
 # npm install -D eslint-plugin-react # this one is too much
 npm install -D eslint-plugin-react-hooks
+npm install -D eslint-plugin-valtio
 ```
 
 ### (X) Husky & commitlint
