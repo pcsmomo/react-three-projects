@@ -51,3 +51,19 @@ npm install -D @types/react-color
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init
 ```
+
+### Eslint
+
+```sh
+# without eslint-config-prettier, eslint fails
+npm install -D \
+  eslint \
+  eslint-config-prettier \
+  eslint-plugin-prettier \
+  @typescript-eslint/eslint-plugin \
+  @typescript-eslint/parser
+
+# for a test
+# npm install -D eslint-plugin-react # this one is too much
+npm install -D eslint-plugin-react-hooks
+```
