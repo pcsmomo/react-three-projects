@@ -35,6 +35,7 @@ npm install -D tailwindcss
 npx tailwindcss init
 
 npm install \
+  three \
   @react-three/fiber \
   @react-three/drei \
   maath \

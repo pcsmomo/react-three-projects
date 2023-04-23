@@ -44,3 +44,10 @@ npm install \
 
 npm install -D @types/react-color
 ```
+
+### Tailwind CSS
+
+```sh
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+```
