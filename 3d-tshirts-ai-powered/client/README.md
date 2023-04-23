@@ -30,9 +30,17 @@ cd 3d-tshirts-ai-powered/client
 npm create vite@latest ./ -- --template react-ts
 ```
 
-### basic packages for this project
+### install dependencies for this project
 
 ```sh
-npm install -D tailwindcss
-npx tailwindcss init
+npm install \
+  three \
+  @react-three/fiber \
+  @react-three/drei \
+  maath \
+  valtio \
+  react-color \
+  framer-motion
+
+npm install -D @types/react-color
 ```
