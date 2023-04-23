@@ -67,3 +67,23 @@ npm install -D \
 # npm install -D eslint-plugin-react # this one is too much
 npm install -D eslint-plugin-react-hooks
 ```
+
+### (X) Husky & commitlint
+
+> ❌ - as this project doens't have .git: I will try it for the other project
+
+```sh
+# commit lint
+npm install -D @commitlint/{cli,config-conventional}
+
+# echo "module.exports = { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
+echo 'export default { extends: ["@commitlint/config-conventional"] };' > commitlint.config.js
+```
+
+```sh
+# husky
+```
+
+```sh
+npm uninstall -D @commitlint/{cli,config-conventional} husky
+```
