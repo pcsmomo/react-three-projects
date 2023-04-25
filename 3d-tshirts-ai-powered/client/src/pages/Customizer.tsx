@@ -17,7 +17,7 @@ import {
 } from "../components";
 
 // Types
-import { Editor } from "../config/types";
+import { Editor, Filter } from "../config/types";
 
 const Customizer = () => {
   const snap = useSnapshot(state);
@@ -31,8 +31,8 @@ const Customizer = () => {
     null
   );
   const [activateFilterTab, setActivateFilterTab] = useState({
-    logoShort: true,
-    stylishShirt: false,
+    [Filter.LogoShirt]: true,
+    [Filter.StylishShirt]: false,
   });
 
   // show tab content depending on the activeTab

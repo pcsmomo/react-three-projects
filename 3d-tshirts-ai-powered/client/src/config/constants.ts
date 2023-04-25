@@ -1,5 +1,5 @@
 import { swatch, fileIcon, ai, logoShirt, stylishShirt } from "../assets";
-import { Editor, EditorTab } from "./types";
+import { Editor, EditorTab, Filter, FilterTab } from "./types";
 
 export const editorTabs: EditorTab[] = [
   {
@@ -16,13 +16,13 @@ export const editorTabs: EditorTab[] = [
   },
 ];
 
-export const filterTabs = [
+export const filterTabs: FilterTab[] = [
   {
-    name: "logoShirt",
+    name: Filter.LogoShirt,
     icon: logoShirt,
   },
   {
-    name: "stylishShirt",
+    name: Filter.StylishShirt,
     icon: stylishShirt,
   },
 ];

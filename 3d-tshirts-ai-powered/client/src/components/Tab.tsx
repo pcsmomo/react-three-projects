@@ -3,13 +3,11 @@ import { useSnapshot } from "valtio";
 
 import state from "../store";
 
-type TabType = {
-  name: string;
-  icon: string;
-};
+// Types
+import { EditorTab, FilterTab } from "../config/types";
 
 interface TabProps {
-  tab: TabType;
+  tab: EditorTab | FilterTab;
   isFilterTab?: boolean;
   isActiveTab?: boolean;
   handleClick: () => void;
