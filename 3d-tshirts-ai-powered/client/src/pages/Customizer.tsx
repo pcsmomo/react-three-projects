@@ -6,7 +6,7 @@ import config from "../config/config";
 import state from "../store";
 import { download } from "../assets";
 import { downloadCanvasToImage, reader } from "../config/helpers";
-import { EditorTabs, FilterTabs, DecalTypes } from "../config/constants";
+import { editorTabs, filterTabs, decalTypes } from "../config/constants";
 import { fadeAnimation, slideAnimation } from "../config/motion";
 import {
   AIPicker,
@@ -16,8 +16,38 @@ import {
   Tab,
 } from "../components";
 
+// Types
+import { Editor } from "../config/types";
+
 const Customizer = () => {
   const snap = useSnapshot(state);
+
+  const [file, setFile] = useState("");
+
+  const [prompt, setPrompt] = useState("");
+  const [generatingImg, setGeneratingImg] = useState(false);
+
+  const [activateEditorTab, setActivateEditorTab] = useState<Editor | null>(
+    null
+  );
+  const [activateFilterTab, setActivateFilterTab] = useState({
+    logoShort: true,
+    stylishShirt: false,
+  });
+
+  // show tab content depending on the activeTab
+  const generateTabContent = () => {
+    switch (activateEditorTab) {
+      case Editor.ColorPicker:
+        return <ColorPicker />;
+      case Editor.FilePicker:
+        return <FilePicker />;
+      case Editor.AIPicker:
+        return <AIPicker />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -30,9 +60,15 @@ const Customizer = () => {
           >
             <div className="flex items-center min-h-screen">
               <div className="editortabs-container tabs">
-                {EditorTabs.map((tab) => (
-                  <Tab key={tab.name} tab={tab} handleClick={() => {}} />
+                {editorTabs.map((tab) => (
+                  <Tab
+                    key={tab.name}
+                    tab={tab}
+                    handleClick={() => setActivateEditorTab(tab.name)}
+                  />
                 ))}
+
+                {generateTabContent()}
               </div>
             </div>
           </motion.div>
@@ -53,12 +89,12 @@ const Customizer = () => {
             className="filtertabs-container"
             {...slideAnimation("up")}
           >
-            {FilterTabs.map((tab) => (
+            {filterTabs.map((tab) => (
               <Tab
                 key={tab.name}
                 tab={tab}
                 isFilterTab
-                isActiveTab=""
+                isActiveTab={false}
                 handleClick={() => {}}
               />
             ))}
