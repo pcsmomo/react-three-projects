@@ -84,11 +84,10 @@ const Customizer = () => {
     if (!file) return;
 
     reader(file).then((result) => {
-      // TODO: fix this
-      // if (typeof result === "string") {
-      handleDecals(type, result);
-      setActivateEditorTab(null);
-      // }
+      if (typeof result === "string") {
+        handleDecals(type, result);
+        setActivateEditorTab(null);
+      }
     });
   };
 
