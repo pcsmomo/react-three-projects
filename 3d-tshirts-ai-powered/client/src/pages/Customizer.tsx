@@ -33,17 +33,15 @@ const Customizer = () => {
   const [prompt, setPrompt] = useState("");
   const [generatingImg, setGeneratingImg] = useState(false);
 
-  const [activateEditorTab, setActivateEditorTab] = useState<Editor | null>(
-    null
-  );
-  const [activateFilterTab, setActivateFilterTab] = useState({
+  const [activeEditorTab, setActiveEditorTab] = useState<Editor | null>(null);
+  const [activeFilterTab, setActiveFilterTab] = useState({
     [Filter.LogoShirt]: true,
     [Filter.StylishShirt]: false,
   });
 
   // show tab content depending on the activeTab
   const generateTabContent = () => {
-    switch (activateEditorTab) {
+    switch (activeEditorTab) {
       case Editor.ColorPicker:
         return <ColorPicker />;
       case Editor.FilePicker:
@@ -58,16 +56,24 @@ const Customizer = () => {
   const handleActiveFilterTab = (tabName: Filter) => {
     switch (tabName) {
       case Filter.LogoShirt:
-        state.isLogoTexture = !activateFilterTab[tabName];
+        state.isLogoTexture = !activeFilterTab[tabName];
         break;
       case Filter.StylishShirt:
-        state.isFullTexture = !activateFilterTab[tabName];
+        state.isFullTexture = !activeFilterTab[tabName];
         break;
       default:
         state.isLogoTexture = true;
         state.isFullTexture = false;
         break;
     }
+
+    // after setting the state, activeFilterTab is updated
+    setActiveFilterTab((prevState) => {
+      return {
+        ...prevState,
+        [tabName]: !prevState[tabName],
+      };
+    });
   };
 
   const handleDecals = (type: DecalType, result: string) => {
@@ -75,7 +81,7 @@ const Customizer = () => {
 
     state[decalType.stateProperty] = result;
 
-    if (!activateFilterTab[decalType.filterTab]) {
+    if (!activeFilterTab[decalType.filterTab]) {
       handleActiveFilterTab(decalType.filterTab);
     }
   };
@@ -86,7 +92,7 @@ const Customizer = () => {
     reader(file).then((result) => {
       if (typeof result === "string") {
         handleDecals(type, result);
-        setActivateEditorTab(null);
+        setActiveEditorTab(null);
       }
     });
   };
@@ -106,7 +112,7 @@ const Customizer = () => {
                   <Tab
                     key={tab.name}
                     tab={tab}
-                    handleClick={() => setActivateEditorTab(tab.name)}
+                    handleClick={() => setActiveEditorTab(tab.name)}
                   />
                 ))}
 
@@ -136,8 +142,8 @@ const Customizer = () => {
                 key={tab.name}
                 tab={tab}
                 isFilterTab
-                isActiveTab={false}
-                handleClick={() => {}}
+                isActiveTab={activeFilterTab[tab.name]}
+                handleClick={() => handleActiveFilterTab(tab.name)}
               />
             ))}
           </motion.div>
