@@ -1,5 +1,12 @@
 import { swatch, fileIcon, ai, logoShirt, stylishShirt } from "../assets";
-import { Editor, EditorTab, Filter, FilterTab } from "./types";
+import {
+  Editor,
+  EditorTab,
+  Filter,
+  FilterTab,
+  DecalType,
+  DecalStateProperty,
+} from "./types";
 
 export const editorTabs: EditorTab[] = [
   {
@@ -28,12 +35,12 @@ export const filterTabs: FilterTab[] = [
 ];
 
 export const decalTypes = {
-  logo: {
-    stateProperty: "logoDecal",
-    filterTab: "logoShirt",
+  [DecalType.Logo]: {
+    stateProperty: DecalStateProperty.LogoDecal,
+    filterTab: Filter.LogoShirt,
   },
-  full: {
-    stateProperty: "fullDecal",
-    filterTab: "stylishShirt",
+  [DecalType.Full]: {
+    stateProperty: DecalStateProperty.FullDecal,
+    filterTab: Filter.StylishShirt,
   },
 };

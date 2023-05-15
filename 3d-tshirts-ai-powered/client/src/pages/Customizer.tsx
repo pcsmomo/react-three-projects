@@ -17,12 +17,18 @@ import {
 } from "../components";
 
 // Types
-import { Editor, Filter } from "../config/types";
+import {
+  Editor,
+  Filter,
+  DecalType,
+  FilterTab,
+  DecalStateProperty,
+} from "../config/types";
 
 const Customizer = () => {
   const snap = useSnapshot(state);
 
-  const [file, setFile] = useState("");
+  const [file, setFile] = useState<Blob>();
 
   const [prompt, setPrompt] = useState("");
   const [generatingImg, setGeneratingImg] = useState(false);
@@ -41,12 +47,49 @@ const Customizer = () => {
       case Editor.ColorPicker:
         return <ColorPicker />;
       case Editor.FilePicker:
-        return <FilePicker />;
+        return <FilePicker file={file} setFile={setFile} readFile={readFile} />;
       case Editor.AIPicker:
         return <AIPicker />;
       default:
         return null;
     }
+  };
+
+  const handleActiveFilterTab = (tabName: Filter) => {
+    switch (tabName) {
+      case Filter.LogoShirt:
+        state.isLogoTexture = !activateFilterTab[tabName];
+        break;
+      case Filter.StylishShirt:
+        state.isFullTexture = !activateFilterTab[tabName];
+        break;
+      default:
+        state.isLogoTexture = true;
+        state.isFullTexture = false;
+        break;
+    }
+  };
+
+  const handleDecals = (type: DecalType, result: string) => {
+    const decalType = decalTypes[type];
+
+    state[decalType.stateProperty] = result;
+
+    if (!activateFilterTab[decalType.filterTab]) {
+      handleActiveFilterTab(decalType.filterTab);
+    }
+  };
+
+  const readFile = (type: DecalType) => {
+    if (!file) return;
+
+    reader(file).then((result) => {
+      // TODO: fix this
+      // if (typeof result === "string") {
+      handleDecals(type, result);
+      setActivateEditorTab(null);
+      // }
+    });
   };
 
   return (
