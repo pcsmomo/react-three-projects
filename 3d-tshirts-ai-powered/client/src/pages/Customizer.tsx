@@ -47,7 +47,14 @@ const Customizer = () => {
       case Editor.FilePicker:
         return <FilePicker file={file} setFile={setFile} readFile={readFile} />;
       case Editor.AIPicker:
-        return <AIPicker />;
+        return (
+          <AIPicker
+            prompt={prompt}
+            setPrompt={setPrompt}
+            generatingImg={generatingImg}
+            handleSubmit={handleSubmit}
+          />
+        );
       default:
         return null;
     }
@@ -74,6 +81,20 @@ const Customizer = () => {
         [tabName]: !prevState[tabName],
       };
     });
+  };
+
+  // TODO: typing for type
+  const handleSubmit = async (type: any) => {
+    if (!prompt) return alert("Please enter a prompt.");
+
+    try {
+      // call our backend to generate an ai image!
+    } catch (error) {
+      alert(error);
+    } finally {
+      setGeneratingImg(false);
+      setActiveEditorTab(null);
+    }
   };
 
   const handleDecals = (type: DecalType, result: string) => {
