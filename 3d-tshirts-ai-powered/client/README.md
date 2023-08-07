@@ -88,11 +88,3 @@ echo 'export default { extends: ["@commitlint/config-conventional"] };' > commit
 ```sh
 npm uninstall -D @commitlint/{cli,config-conventional} husky
 ```
-
-## Server
-
-```sh
-mkdir server
-cd server
-npm init -y
-```
