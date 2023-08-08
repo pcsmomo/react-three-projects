@@ -9,7 +9,7 @@ type ButtonType = "filled" | "outlined";
 interface CustomButtonProps {
   type: ButtonType;
   title: string;
-  handleClick: () => void;
+  handleClick?: () => void;
   customStyles?: string;
 }
 
