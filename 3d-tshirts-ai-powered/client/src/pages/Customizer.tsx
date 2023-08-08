@@ -90,7 +90,8 @@ const Customizer = () => {
       // call our backend to generate an ai image!
       setGeneratingImg(true);
 
-      const response = await fetch(`${config.development.backendUrl}`, {
+      // const response = await fetch(`${config.development.backendUrl}`, {
+      const response = await fetch(`${config.production.backendUrl}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -99,6 +100,12 @@ const Customizer = () => {
           prompt,
         }),
       });
+
+      if (!response.ok) {
+        const { message } = await response.json();
+        alert(message);
+        return;
+      }
 
       const data = await response.json();
 
