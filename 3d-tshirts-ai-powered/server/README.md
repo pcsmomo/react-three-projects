@@ -25,3 +25,30 @@ npx tsc --init
 
 # You can learn more at https://aka.ms/tsconfig
 ```
+
+### Deployment
+
+1. Prepare github repo
+   - the repo has both client and server
+   - delete `package-lock.json`
+   - delete `mongoose`, not using and conflict
+   - change the scripts in `pakcage.json`
+   ```json
+   {
+     "scripts": {
+       "start:build": "tsc -w",
+       "start": "node dist/index.js"
+     }
+   }
+   ```
+   - build with `npm run start:build`
+   - push all changes
+2. Create an account on render.com
+   - New Web Service
+   - Select my github repo
+   - Root directory: `server`
+   - add env variable: `OPENAI_API_KEY`
+
+I've tested it from my local frontend to the deployed backend server. Works good! 🎉
+
+(and changed env variable, OPENAI_API_KEY in case)
