@@ -4,6 +4,9 @@ import { DecalType } from "../config/types";
 // Components
 import CustomButton from "./CustomButton";
 
+// Utils
+import { downloadCanvasToImage } from "../config/helpers";
+
 interface AIPickerProps {
   prompt: string;
   setPrompt: React.Dispatch<React.SetStateAction<string>>;
@@ -45,6 +48,12 @@ const AIPicker: React.FC<AIPickerProps> = ({
               type="filled"
               title="AI Full"
               handleClick={() => handleSubmit(DecalType.Full)}
+              customStyles="text-xs"
+            />
+            <CustomButton
+              type="filled"
+              title="Download"
+              handleClick={downloadCanvasToImage}
               customStyles="text-xs"
             />
           </>
