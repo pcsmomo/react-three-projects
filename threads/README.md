@@ -126,3 +126,11 @@ typescript \
 uploadthing \
 zod
 ```
+
+### run mongodb on local intread of mongo atlas
+
+```sh
+cd mongo
+docker compose build
+docker compose up
+```
