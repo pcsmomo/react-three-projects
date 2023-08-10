@@ -81,3 +81,48 @@ npx create-next-app@latest ./
 ```sh
 npm install @clerk/nextjs @uploadthing/react uploadthing mongoose svix
 ```
+
+#### (temp) Install all dependenies potentially need
+
+as I am going to work on airplane tonight 🛫💻🌛
+
+```sh
+npm install \
+@clerk/nextjs \
+@clerk/themes \
+@hookform/resolvers \
+@radix-ui/react-label \
+@radix-ui/react-menubar \
+@radix-ui/react-select \
+@radix-ui/react-slot \
+@radix-ui/react-tabs \
+@radix-ui/react-toast \
+@types/node \
+@types/react \
+@types/react-dom \
+@uploadthing/react \
+autoprefixer \
+class-variance-authority \
+clsx \
+eslint \
+eslint-config-next \
+eslint-config-prettier \
+eslint-config-standard \
+eslint-plugin-tailwindcss \
+lucide-react \
+micro \
+mongoose \
+next \
+postcss \
+prettier \
+react \
+react-dom \
+react-hook-form \
+svix \
+tailwind-merge \
+tailwindcss \
+tailwindcss-animate \
+typescript \
+uploadthing \
+zod
+```
